@@ -1,0 +1,28 @@
+{
+  "name": "forge-inventor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fusiform/forge-inventor.git"
+  },
+  "author": "Alex Mathews",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fusiform/forge-inventor/issues"
+  },
+  "homepage": "https://github.com/fusiform/forge-inventor#readme",
+  "dependencies": {
+    "async": "^2.1.4",
+    "locks": "^0.2.2",
+    "request": "^2.76.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "should": "^11.1.1"
+  }
+}
