@@ -3,7 +3,7 @@ var os = require('os');
 function run_work_item(callback) {
 
 	// Check platform to handle file path issues
-	var isWin = os.platform().indexOf('win') > -1
+	var isWin = (os.platform().indexOf('win') == 0);
 	if (isWin) {
 		var root = __dirname.substring(0, __dirname.lastIndexOf('\\'));
 	}
