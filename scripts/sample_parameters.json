@@ -1,0 +1,14 @@
+{
+    "Part": "https://static.factoryfour.com/pq/typeF_v12.ipt",
+    "Parameters": {
+        "SupLat_w": 65,
+        "SupLat_h": 20,
+        "SupMed_w": 4,
+        "InfLatRoundingWidth": 12,
+        "InfLat_h": 21,
+        "InfMed_h": 17,
+        "SupLatRoundingWidth": 12,
+        "InfMedRoundingWidth": 12,
+        "PupilDistance": 62
+    }
+}

@@ -1,0 +1,639 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Autodesk.iLogic.Interfaces
+</name>
+</assembly>
+<members>
+<member name="T:Autodesk.iLogic.Interfaces.DoubleForEquals">
+ <summary>
+ Encapsulated Double value type, with an equals operator with a tolerance. For easier equals tests, ignoring round-off error.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.IiLogicAutomation">
+ <summary>
+ iLogic Automation interface.  This can be called from COM or .NET, from in-process or
+ out-of-process.
+ </summary>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicAutomation.CallingFromOutside">
+ <summary>
+ Set this to True if you are calling from out-of-process.
+ </summary>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicAutomation.RulesEnabled">
+ <summary>
+ Set this to False to disable rules running in response to parameter changes or other events.
+ Set this to True to re-enable rule running.  This will also clear any rule errors that may have disabled rules from running.
+ </summary>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicAutomation.RulesOnEventsEnabled">
+ <summary>
+ Set this to False if there may be rules that run on document Open or Close (or other events), and
+ you know you don't want them to run when calling from automation.
+ </summary>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.AddRule(Inventor.Document,System.String,System.String)">
+ <summary>
+ Add a rule to an Inventor document.
+ </summary>
+ <param name="doc">The document where the rule will be created.</param>
+ <param name="ruleName"></param>
+ <param name="ruleText"></param>
+ <returns></returns>
+ <remarks>The rule will be compiled and run.</remarks>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.DeleteRule(Inventor.Document,System.String)">
+ <summary>
+ Delete a rule in an Inventor document.
+ </summary>
+ <param name="doc"></param>
+ <param name="ruleName">The name of the rule to delete.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.RunRule(Inventor.Document,System.String)">
+ <summary>
+ Run a rule.
+ </summary>
+ <param name="doc"></param>
+ <param name="ruleName"></param>
+ <returns>Zero if successful.</returns>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.RunExternalRule(Inventor.Document,System.String)">
+ <summary>
+ Run an external rule.
+ </summary>
+ <param name="doc"></param>
+ <param name="ruleName">Filename.  It can have a relative path.</param>
+ <returns>Zero if successful.</returns>
+ <remarks>iLogic will look for the file in the folder of the current document</remarks>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.RunRuleDirect(Autodesk.iLogic.Interfaces.iLogicRule)">
+ <summary>
+ Run a rule, by specifying the rule object.
+ </summary>
+ <param name="rule"></param>
+ <returns></returns>
+ <remarks>The rule object can be obtained from GetRule or the Rules property.</remarks>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.RunRuleWithArguments(Inventor.Document,System.String,Inventor.NameValueMap)">
+ <summary>
+ Run a rule, also passing rule arguments.
+ </summary>
+ <param name="doc"></param>
+ <param name="ruleName"></param>
+ <param name="ruleArguments">Arguments to pass to the rule</param>
+ <returns>Zero if successful.</returns>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.RunExternalRuleWithArguments(Inventor.Document,System.String,Inventor.NameValueMap)">
+ <summary>
+ Run an external rule, also passing rule arguments.
+ </summary>
+ <param name="doc"></param>
+ <param name="ruleName">Filename.  It can have a relative path.</param>
+ <param name="ruleArguments">Arguments to pass to the rule</param>
+ <returns>Zero if successful.</returns>
+ <remarks>iLogic will look for the file in the folder of the current document.</remarks>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.RunRuleDirectWithArguments(Autodesk.iLogic.Interfaces.iLogicRule,Inventor.NameValueMap)">
+ <summary>
+ Run a rule, by specifying the rule object, also passing rule arguments.
+ </summary>
+ <param name="rule"></param>
+ <param name="ruleArguments">Arguments to pass to the rule</param>
+ <returns></returns>
+ <remarks>The rule object can be obtained from GetRule or the Rules property.</remarks>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicAutomation.ParamValue(Inventor.Document,System.String)">
+ <summary>
+ Get the value of an Inventor parameter.
+ </summary>
+ <param name="doc"></param>
+ <param name="paramName"></param>
+ <returns>For a numeric parameter, returns a Double.  For a Text parameter, returns a String,  For a True/False parameter, returns a Boolean.</returns>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicAutomation.ParamValueInComponent(Inventor.Document,System.String,System.String)">
+ <summary>
+ Get the value of an Inventor parameter in a component or referenced document.
+ </summary>
+ <param name="doc"></param>
+ <param name="componentOrDocName">This can be a component or document name.</param>
+ <param name="paramName"></param>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicAutomation.ParamValueDirect(Autodesk.iLogic.Interfaces.iLogicParameter)">
+ <summary>
+ Get the value of a Text or True/False parameter.
+ </summary>
+ <param name="param"></param>
+ <value></value>
+ <returns></returns>
+ <remarks>This function is deprecated. Use the Inventor API Parameter.Value instead.</remarks>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicAutomation.Rules(Inventor.Document)">
+ <summary>
+ Get a list of the rules in the document.
+ </summary>
+ <param name="doc"></param>
+ <returns>An IEnumerable of objects that implement the iLogicRule interface.</returns>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.GetRule(Inventor.Document,System.String)">
+ <summary>
+ Get a rule in the document.
+ </summary>
+ <param name="doc"></param>
+ <param name="ruleName">Name of the rule to get.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicAutomation.Params(Inventor.Document)">
+ <summary>
+ Get a list of the Text and True/False parameters in the document.
+ </summary>
+ <param name="doc"></param>
+ <value></value>
+ <returns>An IEnumerable of objects that implement the iLogicParameter interface.</returns>
+ <remarks>This function is deprecated. Use the Inventor API interface named Parameters instead.</remarks>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.GetParam(Inventor.Document,System.String)">
+ <summary>
+ Get an iLogic parameter (implementing the iLogicParameter interface) by name.
+ </summary>
+ <param name="doc"></param>
+ <param name="paramName"></param>
+ <remarks>This function is deprecated. Use the Inventor API instead.</remarks>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.MultiValueSetValueOptions(System.Boolean,System.Int32,System.String)">
+ <summary>
+ Control what the behavior of iLogic will be when you assign a multivalue list to a parameter.
+ </summary>
+ <param name="doSetValue">Set this to True if you want to automatically change the parameter value to one that is in the list, if necessary.</param>
+ <param name="DefaultIndex">Index if the list of the value to use.  This only applies to Text parameters.</param>
+ <param name="NumericCompare">This option is no longer supported.</param>
+ <remarks></remarks>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicAutomation.ParamMultiValues(Inventor.Document,System.String)">
+ <summary>
+ Get or set the multivalue list of an Inventor parameter, as an array of strings.
+ </summary>
+ <param name="doc"></param>
+ <param name="paramName"></param>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicAutomation.InventorParamMultiValues(Inventor.Parameter)">
+ <summary>
+ Get or set the multivalue list of an Inventor parameter, specifying an Inventor.Parameter object directly.
+ </summary>
+ <param name="param"></param>
+ <value></value>
+ <returns></returns>
+ <remarks>This function is deprecated. Use the Inventor API ExpressionList object instead.</remarks>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.DeleteAllRules(Inventor.Document)">
+ <summary>
+ Delete all rules in the specified document. In an assembly, this will also recursively delete all rules in all the referenced documents.
+ </summary>
+ <param name="doc"></param>
+ <remarks></remarks>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.DeleteAllRulesInDocument(Inventor.Document)">
+ <summary>
+ Delete all rules in the specified document only.
+ </summary>
+ <param name="doc"></param>
+ <remarks></remarks>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.DeleteAlliLogicObjects(Inventor.Document)">
+ <summary>
+ Delete all rules in a document.
+ </summary>
+ <param name="doc"></param>
+ <remarks>This is deprecated.  It is provided for backward compatibility. Use DeleteAllRules instead.</remarks>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.ParametersXmlSave(Inventor.Document,System.String,Autodesk.iLogic.Interfaces.XmlSaveOption)">
+ <summary>
+ Export Inventor parameters from a document to an XML file.
+ </summary>
+ <param name="doc"></param>
+ <param name="xmlFileName"></param>
+ <param name="saveOption"></param>
+ <returns></returns>
+ <remarks>You can export all parameters, or key parameters only.</remarks>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.ParametersXmlLoad(Inventor.Document,System.String)">
+ <summary>
+ Import Inventor parameters from an XML file to the document.
+ </summary>
+ <param name="doc"></param>
+ <param name="xmlFileName"></param>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.EnterDelayedRuleRunningMode">
+ <summary>
+ Put iLogic in a delayed rule-running mode.  Rules that are triggered by parameter changes and other events
+ will not be run until you call ExitDelayedRuleRunningMode.
+ </summary>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicAutomation.InDelayedRuleRunningMode">
+ <summary>
+ Indicates that iLogic is in delayed rule-running mode.
+ </summary>
+ <returns>True if iLogic is in delayed rule-running mode.</returns>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicAutomation.ExitDelayedRuleRunningMode(System.Boolean)">
+ <summary>
+ Exit delayed rule-running mode.  Run all rules that were triggered by parameter changes or other events 
+ while in delayed rule-running mode (unless the parameter RunRules is False).
+ Rules within each document will be run in the order in which they are found in the document.
+ </summary>
+ <param name="RunRules"> 
+ Set this to False to prevent the triggered rules from running.
+ </param>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicAutomation.SilentOperation">
+ <summary>
+ This is an iLogic-specific SilentOperation flag.  Normally when rules are run (in full Inventor or Inventor OEM),
+  if any exceptions occur they will be shown in message dialogs.
+ Set this to True if you don't want error messages to be displayed.
+ (This property will always be True in Inventor Server.)
+ </summary>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.iLogicRule">
+ <summary>
+ Interface to an iLogic Rule, from COM or .NET.
+ </summary>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.iLogicRule.Name">
+ <summary>
+ Get or set the name of the rule.
+ </summary>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.iLogicRule.IsActive">
+ <summary>
+ True if the rule is not suppressed.
+ </summary>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.iLogicRule.Text">
+ <summary>
+ Get and set the rule text (rule VB code).
+ </summary>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.iLogicParameter">
+ <summary>
+ Interface to a Text or True/False parameter.
+ </summary>
+ <remarks>
+ This is deprecated.  It is no longer needed in Inventor 2011 and beyond.  The Inventor.Parameter object supports Text and True/False parameters.
+ </remarks>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.ExceptionsLog.Exceptions">
+ <summary>
+ An IEnumerable of ExceptionLogEntry objects.
+ </summary>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.XmlSaveOption">
+ <summary>
+ Control the behavior of ParametersXmlSave
+ </summary>
+</member>
+<member name="F:Autodesk.iLogic.Interfaces.XmlSaveOption.KeysOnly">
+ <summary>
+ Save only Key Parameters to the XML file
+ </summary>
+</member>
+<member name="F:Autodesk.iLogic.Interfaces.XmlSaveOption.All">
+ <summary>
+ Save all parameters to the XML file
+ </summary>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.IParamDynamic">
+ <summary>
+ Provides properties on Inventor parameters.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named Parameter (and optionally the old name DynaParam).
+ </remarks>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IParamDynamic.Value(System.String)">
+ <summary>
+ Get or set the value of a parameter.  If the parameter is numeric (and not unitless), the value will be in the document units that are dimensionally the same as the parameter units.
+ </summary>
+ <param name="docAndParamName">Parameter name, with optional document name prefix.</param>
+ <value></value>
+ <returns></returns>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IParamDynamic.Value(System.Object,System.String)">
+ <summary>
+ Get or set the value of a parameter in a (referenced) document or component.
+ </summary>
+ <param name="compoOrDocName"></param>
+ <param name="paramName"></param>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.IMultiValueParam">
+ <summary>
+  Provides properties and functions for multivalue lists (of parameter expressions).
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named MultiValue.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ICadComponent">
+ <summary>
+ Provides properties and functions for assembly components.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named Component.
+ </remarks>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.ICadComponent.InventorComponent(System.Object)">
+ <summary>
+ Find a component with the specified name in this assembly or in any subassemblies.
+ </summary>
+ <returns>An Inventor.ComponentOccurrence object.</returns>
+ <remarks></remarks>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.ICadComponent.InventorComponentInThisContext(System.Object)">
+ <summary>
+ Find a component with the specified name in this assembly or in any subassemblies.  
+ Even if the component is found in a subassembly, the ComponentOccurrence returned will be in the context of this higher-level assembly
+ (the assembly from which the rule is run).
+ </summary>
+ <returns>An Inventor.ComponentOccurrence object.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.ICadComponent.AddDrawingName(System.String)">
+ <summary>
+ For future use.
+ </summary>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.ICadComponent.ReplaceBySuppression(System.Object,System.Object)">
+ <summary>
+ For future use.
+ </summary>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.IAssemConstraint">
+ <summary>
+ Provides properties and functions for assembly constraints.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named Constraint.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.IAssemJoint">
+ <summary>
+ Provides properties and functions for assembly joints.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named Joint.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ICadFeature">
+ <summary>
+ Properties and functions for features (in a part or assembly).
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named Feature.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ICadWorkPlane">
+ <summary>
+ Properties and functions for workplanes (in a part or assembly).
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named WorkPlane.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ICadSketch">
+ <summary>
+  Provides a function for a sketch (in a part or assembly).
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named Sketch.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ICadMeasure">
+ <summary>
+  Provides functions for a measuring distance, angle and area (in a part or assembly).
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named Measure.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.IiProperties">
+ <summary>
+  Provides properties to get and set iProperty values and physical properties (in a part or assembly).
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named iProperties.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.IiPartRowChanger">
+ <summary>
+  Provides functions to find and change the current row of an iPart or iAssenbly component.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named iPart and also iAssembly. These are two references to the same object.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.IiFeatureRowChanger">
+ <summary>
+  Provides functions to find and change the current row of an iFeature in a part.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named iFeature.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.IGoExcel">
+ <summary>
+  Provides functions properties to read and write data from Excel.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named GoExcel.
+ </remarks>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IGoExcel.Application">
+ <summary>
+ Get the Excel Application object (of the type Microsoft.Office.Interop.Excel.Application).
+ </summary>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IGoExcel.ClearCache">
+ <summary>
+ Clear the internal cache used by FindRow and CurrentRowValue.  This cache is not used by CellValue and related functions.
+ It is a global cache, and it persists when rules are not being run.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ISheetMetal">
+ <summary>
+  Provides functions and properties for sheet metal.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named SheetMetal.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ISharedVariable">
+ <summary>
+  Provides properties and functions for objects that can be shared between iLogic rules in an Inventor session.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named SharedVariable.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ILowLevelSupport">
+ <summary>
+  Provides properties and functions for access to the Inventor API, running other rules, and miscellaneous functions.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named iLogicVb and also InventorVb. These are two references to the same object.
+ </remarks>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.ILowLevelSupport.DocumentUpdate">
+ <summary>
+ Update the document that the rule is running in.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.ILowLevelSupport.UpdateWhenDone">
+ <summary>
+ Set a property of the rule: when it finishes it will Update the document in which it is running.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.IiLogicForm">
+ <summary>
+  Provides functions to show (launch) predefined iLogic forms.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named iLogicForm.
+ </remarks>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicForm.FormNames">
+ <summary>
+ Get a list of the forms that are stored in this model.
+ </summary>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicForm.GlobalFormNames">
+ <summary>
+ Get a list of the forms that are stored globally.
+ </summary>
+</member>
+<member name="P:Autodesk.iLogic.Interfaces.IiLogicForm.EnablePositionAndSizeSaving">
+ <summary>
+ If this is True, and the size and position of the form are changed while it is being shown, they will be saved upon closing it.
+ </summary>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicForm.Show(System.String,Autodesk.iLogic.Interfaces.FormMode)">
+ <summary>
+ Show a form that is stored in the model.
+ </summary>
+</member>
+<member name="M:Autodesk.iLogic.Interfaces.IiLogicForm.ShowGlobal(System.String,Autodesk.iLogic.Interfaces.FormMode)">
+ <summary>
+ Show a form that is in global storage.
+ </summary>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.FormMode">
+ <summary>
+ A choice of form modes.  AsDesigned will use the mode specified in the form design.  Modal or NonModal will override it.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.FormResult">
+ <summary>
+ A return value of a form: usually indicates which button caused the form to be closed.
+ </summary>
+ <remarks>
+ This is similar to System.Windows.Forms.DialogResult.
+ See FormReturnValue for the full return value.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.FormReturnValue">
+ <summary>
+ The full form return value, including the FormResult.  If Result is RuleButtonClose or RuleButtonApplyAndClose, RuleName
+ will contain the name of the rule that is associated with the rule button that caused the form to close.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ICadDoc">
+ <summary>
+  Provides properties and functions for access to the Inventor document in which the rule is running.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named ThisDoc.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ICadBom">
+ <summary>
+  Provides functions for access to the assembly BOM.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named ThisBom.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ViewCameraOption">
+ <summary>
+  Options for the ILowLevelSupport.SetViewCamera function.
+ </summary>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ICadDrawing">
+ <summary>
+  Provides functions for access to the drawing in which the rule is running.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named ThisDrawing.
+ ActiveSheet will be available as a property of the rule class (so that it can be used as a standalone object), if used in the rule.
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ICadDrawingSheet">
+ <summary>
+  Provides functions and properties for a drawing sheet.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ICadDrawingView">
+ <summary>
+  Provides functions and properties for a drawing view.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.ICadViewBalloons">
+ <summary>
+  Provides functions and properties for balloons, in a drawing view.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="T:Autodesk.iLogic.Interfaces.IRuleArguments">
+ <summary>
+ Provides access to context information provided via the RunRule family of automation methods.
+ </summary>
+ <remarks>
+ In a rule, this interface is implemented by the predefined object named Context.
+ </remarks>
+</member>
+</members>
+</doc>

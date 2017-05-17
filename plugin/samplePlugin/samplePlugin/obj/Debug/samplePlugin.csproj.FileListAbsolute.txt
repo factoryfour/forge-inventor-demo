@@ -1,0 +1,9 @@
+C:\Users\balglej\Source\Repos\InventorIOSamples\samplePluginAppPackage\samplePlugin.bundle\Contents\samplePlugin.Inventor.addin
+C:\Users\balglej\Source\Repos\InventorIOSamples\samplePluginAppPackage\samplePlugin.bundle\Contents\samplePlugin.dll
+C:\Users\balglej\Source\Repos\InventorIOSamples\samplePluginAppPackage\samplePlugin.bundle\Contents\samplePlugin.pdb
+C:\Users\balglej\Source\Repos\InventorIOSamples\samplePlugin\samplePlugin\obj\Debug\samplePlugin.dll
+C:\Users\balglej\Source\Repos\InventorIOSamples\samplePlugin\samplePlugin\obj\Debug\samplePlugin.pdb
+C:\Users\balglej\Source\Repos\InventorIOSamples\samplePlugin\samplePlugin\obj\Debug\samplePlugin.csprojResolveAssemblyReference.cache
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\samplePlugin\obj\Debug\samplePlugin.csprojResolveAssemblyReference.cache
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\samplePlugin\obj\Debug\samplePlugin.dll
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\samplePlugin\obj\Debug\samplePlugin.pdb

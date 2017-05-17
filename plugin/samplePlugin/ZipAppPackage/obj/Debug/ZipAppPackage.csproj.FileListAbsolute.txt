@@ -1,0 +1,12 @@
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\ZipAppPackage\bin\Debug\ZipAppPackage.exe.config
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\ZipAppPackage\obj\Debug\ZipAppPackage.exe
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\ZipAppPackage\obj\Debug\ZipAppPackage.pdb
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\ZipAppPackage\bin\Debug\ZipAppPackage.exe
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\ZipAppPackage\bin\Debug\ZipAppPackage.pdb
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\ZipAppPackage\bin\Debug\Autodesk.Forge.dll
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\ZipAppPackage\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\ZipAppPackage\bin\Debug\RestSharp.dll
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\ZipAppPackage\bin\Debug\Autodesk.Forge.xml
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\ZipAppPackage\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\ZipAppPackage\bin\Debug\RestSharp.xml
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\ZipAppPackage\obj\Debug\ZipAppPackage.csprojResolveAssemblyReference.cache

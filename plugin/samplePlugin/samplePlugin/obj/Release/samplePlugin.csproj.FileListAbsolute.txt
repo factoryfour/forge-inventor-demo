@@ -1,0 +1,6 @@
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePluginAppPackage\samplePlugin.bundle\Contents\samplePlugin.Inventor.addin
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePluginAppPackage\samplePlugin.bundle\Contents\samplePlugin.dll
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePluginAppPackage\samplePlugin.bundle\Contents\samplePlugin.pdb
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\samplePlugin\obj\Release\samplePlugin.dll
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\samplePlugin\obj\Release\samplePlugin.pdb
+C:\Users\Pranav\Documents\GitHub\fusiform\forge\change-parameters\samplePlugin\samplePlugin\obj\Release\samplePlugin.csprojResolveAssemblyReference.cache
