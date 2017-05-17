@@ -413,8 +413,8 @@ namespace samplePlugin
             if (transl.HasSaveCopyAsOptions[doc, context, options])
             {
                 Trace.TraceInformation("Setting STL translator options");
-                options.Value["ExportUnits"] = 4; // Centimeters
-                options.Value["Resolution"] = 1; // Medium
+                options.Value["ExportUnits"] = 4;   // Centimeters
+                options.Value["Resolution"] = 0;    // High <-- changed this from 1
             }
             Trace.TraceInformation("Setting other STL translator things");
             context.Type = IOMechanismEnum.kFileBrowseIOMechanism; // ???
