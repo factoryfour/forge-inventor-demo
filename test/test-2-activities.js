@@ -1,10 +1,10 @@
 const should = require('should');
 const async = require('async');
 
-var os = require('os');
+const os = require('os');
 
 // Check platform to handle file path issues
-var isWin = os.platform().indexOf('win') > -1
+var isWin = os.platform().indexOf('win32') > -1
 if (isWin) {
   var root = __dirname.substring(0, __dirname.lastIndexOf('\\'));
 }
@@ -18,8 +18,8 @@ describe('Activity Methods', function() {
     var authObj;
     var da;
     const auth = forge.auth(config);
-	var test_id = 'TESTActivity';
-	var test_package_id = 'TESTPackage';
+	var test_id = 'test_activity';
+	var test_package_id = 'test_app_package_2';
     before(function(done) {
 		this.slow(4000);
 		this.timeout(5000);
@@ -61,6 +61,8 @@ describe('Activity Methods', function() {
         da.activities.getAll(function(error, results) {
             should.not.exist(error);
             should.exist(results);
+			console.log(results);
+			
 			if (process.env.VERBOSE == 'loud') {
 	            console.log(results);
 			}

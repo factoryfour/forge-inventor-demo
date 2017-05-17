@@ -1,7 +1,8 @@
-### This repository contains:
+## This repository contains:
 - the Forge API wrapper
 - a demo script for the design automation API that creates a WorkItem and polls its status until complete
 - sample log files detailing different results
+- C# code that is compiled and uploaded as an App Package
 
 ### To install and run:
 Fill parameters in `config.js`.
@@ -9,47 +10,35 @@ Fill parameters in `config.js`.
 ```
 npm install
 npm test
-node demo/demo_work_items.js
+
+node demo/demo_new_activity.js
+
+cd scripts/
+node change_parameters.js ./sample_parameters.json sample_job_name
 ```
 
 ### Provided log files:
-- `report_0.log`: a successful request to execute a work item
-- `report_1.log`: a failed request with a FailedMissingOutput exception
-- `report_2.log`: a failed request with a Succeeded result, but error when writing the .stl file
+- `report_0.log`: a failed request where the AppPackage is not downloaded properly
+- `report_1.log`: a successful request using samplePlugin
 
-All work items were run using the following config JSON:
+## plugin directory
+
+This folder contains the samplePlugin that is rebuilt into samplePluginAppPackage.
+
+Output from the build:
 ```
-{
-    Arguments: {
-        InputArguments: [
-            // Using the sample Box part
-            {
-                Resource: "https://s3-us-west-2.amazonaws.com/inventor-io-samples/Box.ipt",
-                Name: "HostDwg",
-                StorageProvider: "Generic",
-                HttpVerb: "GET"
-            },
-            // Change the parameters
-            {
-                Resource:  'data:application/json,{\"d1\":\"0.3 in\", \"d2\":\"0.5 in\"}',
-                Name: 'ChangeParameters',
-                StorageProvider: 'Generic',
-                ResourceKind: 'Embedded'
-            }
-        ],
-        // Write to a Zip package
-        OutputArguments: [
-            {
-                Name: "Result",
-                StorageProvider: "Generic",
-                HttpVerb: "POST",
-                ResourceKind: "ZipPackage"
-            }
-        ]
-    },
-    ActivityId: "SampleActivity",
-    Id: ""
-}
+1>------ Rebuild All started: Project: ZipAppPackage, Configuration: Release Any CPU ------
+1>  ZipAppPackage -> [...]\fusiform\forge\change-parameters\samplePlugin\ZipAppPackage\bin\Release\ZipAppPackage.exe
+2>------ Rebuild All started: Project: samplePlugin, Configuration: Release Any CPU ------
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(1820,5): warning MSB3270: There was a mismatch between the processor architecture of the project being built "MSIL" and the processor architecture of the reference "Autodesk.iLogic.Core", "AMD64". This mismatch may cause runtime failures. Please consider changing the targeted processor architecture of your project through the Configuration Manager so as to align the processor architectures between your project and references, or take a dependency on references with a processor architecture that matches the targeted processor architecture of your project.
+2>CSC : warning CS1762: A reference was created to embedded interop assembly 'Autodesk.Inventor.Interop, Version=21.0.0.0, Culture=neutral, PublicKeyToken=d84147f8b4276564' because of an indirect reference to that assembly created by assembly 'Autodesk.iLogic.Interfaces, Version=21.0.14200.0, Culture=neutral, PublicKeyToken=null'. Consider changing the 'Embed Interop Types' property on either assembly.
+2>CSC : warning CS1762: A reference was created to embedded interop assembly 'Autodesk.Inventor.Interop, Version=21.0.0.0, Culture=neutral, PublicKeyToken=d84147f8b4276564' because of an indirect reference to that assembly created by assembly 'Autodesk.iLogic.Core, Version=21.0.14200.0, Culture=neutral, PublicKeyToken=null'. Consider changing the 'Embed Interop Types' property on either assembly.
+2>  samplePlugin -> [...]\forge\change-parameters\samplePluginAppPackage\samplePlugin.bundle\Contents\samplePlugin.dll
+2>  'mt.exe' is not recognized as an internal or external command,
+2>  operable program or batch file.
+========== Rebuild All: 2 succeeded, 0 failed, 0 skipped ==========
 ```
 
-It was noted that the only difference with the successful request was that files were saved and writen to C:\ whereas all failed requests go to Z:\
+**There's an error message in there, but I'm not sure how to fix it. How should I configure the build to prevent these errors?**
+
+The bundle is then zipped and uploaded as an AppPackage.

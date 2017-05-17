@@ -1,53 +1,57 @@
-[02/08/2017 20:45:46] Starting work item eb04da8532aa4663ada0fcb0d3f9afb9
-[02/08/2017 20:45:46] Start download phase.
-[02/08/2017 20:45:46] Start preparing AppPackage samplePlugin.
-[02/08/2017 20:45:46] Reuse previously downloaded app from local cache.
-[02/08/2017 20:45:46] Done preparing AppPackage samplePlugin.
-[02/08/2017 20:45:46] Start downloading file https://s3-us-west-2.amazonaws.com/inventor-io-samples/Box.ipt.
-[02/08/2017 20:45:46] End downloading file https://s3-us-west-2.amazonaws.com/inventor-io-samples/Box.ipt. 84480 bytes have been written to Z:\Aces\Jobs\eb04da8532aa4663ada0fcb0d3f9afb9\swing_c_washer.ipt.
-[02/08/2017 20:45:46] Embedded resource data:application/json,{"d1":"0.3 in", "d2":"0.5 in"} is saved as file: Z:\Aces\Jobs\eb04da8532aa4663ada0fcb0d3f9afb9\changeParameters.json.
-[02/08/2017 20:45:46] End download phase.
-[02/08/2017 20:45:46] Start preparing script and command line parameters.
-[02/08/2017 20:45:46] Start script content.
-[02/08/2017 20:45:46] 
-[02/08/2017 20:45:46] End script content.
-[02/08/2017 20:45:46] Command line: /i "Z:\Aces\Jobs\eb04da8532aa4663ada0fcb0d3f9afb9\swing_c_washer.ipt" changeParameters.json Output.stl /s "Z:\Aces\Jobs\eb04da8532aa4663ada0fcb0d3f9afb9\script.scr"
-[02/08/2017 20:45:46] End preparing script and command line parameters.
-[02/08/2017 20:45:46] Start script phase.
-[02/08/2017 20:45:46] ### Command line arguments:  /i "Z:\Aces\Jobs\eb04da8532aa4663ada0fcb0d3f9afb9\swing_c_washer.ipt" changeParameters.json Output.stl /s "Z:\Aces\Jobs\eb04da8532aa4663ada0fcb0d3f9afb9\script.scr" /al "Z:\Aces\Applications\21.17\samplePlugin[9905bdf0-ff76-47cf-9e88-a193fff1b3b7].package".
-[02/08/2017 20:45:46] Start AutoCAD Core application output.
-[02/08/2017 20:45:46] accoreconsole.exe Information: 0 : Starting Inventor Server.
-[02/08/2017 20:45:47] accoreconsole.exe Information: 0 : Started Inventor Server 2017.1 (Build 211199000, 199)
-[02/08/2017 20:45:47] accoreconsole.exe Information: 0 : Loading plug-in: iLogic Plugin
-[02/08/2017 20:45:47]     accoreconsole.exe Information: 0 : Activating plug-in: iLogic Plugin
-[02/08/2017 20:45:47]     iLogic Plugin: initializing...
-[02/08/2017 20:45:47] accoreconsole.exe Information: 0 : Opening document: Z:\Aces\Jobs\eb04da8532aa4663ada0fcb0d3f9afb9\swing_c_washer.ipt
-[02/08/2017 20:45:47] accoreconsole.exe Information: 0 : Getting Inventor plug-in.
-[02/08/2017 20:45:47] accoreconsole.exe Information: 0 : Plug-in: sample plugin
-[02/08/2017 20:45:47]     accoreconsole.exe Information: 0 : Activating plug-in: sample plugin
-[02/08/2017 20:45:47]     accoreconsole.exe Information: 0 : : samplePlugin: initializing... 
-[02/08/2017 20:45:47]     accoreconsole.exe Information: 0 : Executing 'RunWithArguments' method on Automation object.
-[02/08/2017 20:45:47]     accoreconsole.exe Information: 0 : 2
-[02/08/2017 20:45:47]     accoreconsole.exe Information: 0 : RunWithArguments called with swing_c_washer and changeParameters.json and Output.stl
-[02/08/2017 20:45:47]     accoreconsole.exe Information: 0 : Modifying param _1
-[02/08/2017 20:45:47]     accoreconsole.exe Information: 0 : paramFile: changeParameters.json
-[02/08/2017 20:45:47]     accoreconsole.exe Information: 0 : changeParameters file: "{"d1":"0.3 in", "d2":"0.5 in"}"
-[02/08/2017 20:45:47]     accoreconsole.exe Information: 0 : param to change: d1:0.3 in
-[02/08/2017 20:45:48]     accoreconsole.exe Information: 0 : param to change: d2:0.5 in
-[02/08/2017 20:45:48]     accoreconsole.exe Information: 0 : doc updated.
-[02/08/2017 20:45:48]     accoreconsole.exe Information: 0 : writing file: Z:\Aces\Jobs\eb04da8532aa4663ada0fcb0d3f9afb9\Output.stl
-[02/08/2017 20:45:48]     accoreconsole.exe Error: 0 : Exception in plugin: System.ArgumentException: The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG))
-[02/08/2017 20:45:48]    at System.RuntimeType.ForwardCallToInvokeMember(String memberName, BindingFlags flags, Object target, Int32[] aWrapperTypes, MessageData& msgData)
-[02/08/2017 20:45:48]    at Inventor._DocumentClass.SaveAs(String FileName, Boolean SaveCopyAs)
-[02/08/2017 20:45:48]    at samplePlugin.SampleAutomation.RunWithArguments(Document doc, NameValueMap map) in C:\Forge\InventorIOSamples-master\samplePlugin\samplePlugin\SampleAutomation.cs:line 60
-[02/08/2017 20:45:48]    at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
-[02/08/2017 20:45:48]    at IvCoreConsole.Inv.InventorServerApp.TryRunWithArguments(Object automationObject, CommandLineArgs cl)
-[02/08/2017 20:45:48]    at IvCoreConsole.Inv.InventorServerApp.ExecuteAutomation(Object automationObject, CommandLineArgs cl)
-[02/08/2017 20:45:48]    at IvCoreConsole.Inv.InventorServerApp.RunPlugin(IInventorAddInAppPackage addin, CommandLineArgs cl)
-[02/08/2017 20:45:48] End AutoCAD Core Console output
-[02/08/2017 20:45:48] Error: AutoCAD Core Console output contains error(s).
-[02/08/2017 20:45:48] End script phase.
-[02/08/2017 20:45:48] Start upload phase.
-[02/08/2017 20:45:48] Error: Output is missing [Output.stl].
-[02/08/2017 20:45:48] Error: An unexpected error happened during phase Publishing of job.
-[02/08/2017 20:45:48] Job finished with result FailedMissingOutput
+[03/29/2017 14:39:01] Starting work item 408dbcaea0de4b1098d2ae89c7511cd3
+[03/29/2017 14:39:01] Start download phase.
+[03/29/2017 14:39:01] Start preparing AppPackage samplePlugin.
+[03/29/2017 14:39:01] Reuse previously downloaded app from local cache.
+[03/29/2017 14:39:01] Done preparing AppPackage samplePlugin.
+[03/29/2017 14:39:01] Start downloading file https://static.factoryfour.com/pq/typeF_v12.ipt.
+[03/29/2017 14:39:02] End downloading file https://static.factoryfour.com/pq/typeF_v12.ipt. 3348992 bytes have been written to Z:\Aces\Jobs\408dbcaea0de4b1098d2ae89c7511cd3\swing_c_washer.ipt.
+[03/29/2017 14:39:02] Embedded resource data:application/json,{"SupLat_w":"65", "SupLat_h":"20", "SupMed_w":"4", "InfLatRoundingWidth":"12", "InfLat_h":"21", "InfMed_h":"17", "SupLatRoundingWidth":"12", "InfMedRoundingWidth":"12", "PupilDistance":"62"} is saved as file: Z:\Aces\Jobs\408dbcaea0de4b1098d2ae89c7511cd3\changeParameters.json.
+[03/29/2017 14:39:02] End download phase.
+[03/29/2017 14:39:02] Start preparing script and command line parameters.
+[03/29/2017 14:39:02] Start script content.
+[03/29/2017 14:39:02] 
+[03/29/2017 14:39:02] End script content.
+[03/29/2017 14:39:02] Command line: /i "Z:\Aces\Jobs\408dbcaea0de4b1098d2ae89c7511cd3\swing_c_washer.ipt" changeParameters.json Output.stl /s "Z:\Aces\Jobs\408dbcaea0de4b1098d2ae89c7511cd3\script.scr"
+[03/29/2017 14:39:02] End preparing script and command line parameters.
+[03/29/2017 14:39:02] Start script phase.
+[03/29/2017 14:39:02] ### Command line arguments:  /i "Z:\Aces\Jobs\408dbcaea0de4b1098d2ae89c7511cd3\swing_c_washer.ipt" changeParameters.json Output.stl /s "Z:\Aces\Jobs\408dbcaea0de4b1098d2ae89c7511cd3\script.scr" /al "Z:\Aces\Applications\21.17\samplePlugin[9905bdf0-ff76-47cf-9e88-a193fff1b3b7].package".
+[03/29/2017 14:39:02] Start AutoCAD Core application output.
+[03/29/2017 14:39:02] accoreconsole.exe Information: 0 : Starting Inventor Server.
+[03/29/2017 14:39:02] accoreconsole.exe Information: 0 : Started Inventor Server 2017.1 (Build 211199000, 199)
+[03/29/2017 14:39:02] accoreconsole.exe Information: 0 : Loading plug-in: iLogic Plugin
+[03/29/2017 14:39:02]     accoreconsole.exe Information: 0 : Activating plug-in: iLogic Plugin
+[03/29/2017 14:39:02]     iLogic Plugin: initializing...
+[03/29/2017 14:39:02] accoreconsole.exe Information: 0 : Opening document: Z:\Aces\Jobs\408dbcaea0de4b1098d2ae89c7511cd3\swing_c_washer.ipt
+[03/29/2017 14:39:03] accoreconsole.exe Information: 0 : Getting Inventor plug-in.
+[03/29/2017 14:39:03] accoreconsole.exe Information: 0 : Plug-in: sample plugin
+[03/29/2017 14:39:03]     accoreconsole.exe Information: 0 : Activating plug-in: sample plugin
+[03/29/2017 14:39:03]     accoreconsole.exe Information: 0 : : samplePlugin: initializing... 
+[03/29/2017 14:39:03]     accoreconsole.exe Information: 0 : Executing 'RunWithArguments' method on Automation object.
+[03/29/2017 14:39:03]     accoreconsole.exe Information: 0 : 2
+[03/29/2017 14:39:03]     accoreconsole.exe Information: 0 : RunWithArguments called with swing_c_washer and changeParameters.json and Output.stl
+[03/29/2017 14:39:03]     accoreconsole.exe Information: 0 : Modifying param _1
+[03/29/2017 14:39:03]     accoreconsole.exe Information: 0 : paramFile: changeParameters.json
+[03/29/2017 14:39:03]     accoreconsole.exe Information: 0 : changeParameters file: "{"SupLat_w":"65", "SupLat_h":"20", "SupMed_w":"4", "InfLatRoundingWidth":"12", "InfLat_h":"21", "InfMed_h":"17", "SupLatRoundingWidth":"12", "InfMedRoundingWidth":"12", "PupilDistance":"62"}"
+[03/29/2017 14:39:03]     accoreconsole.exe Information: 0 : param to change: SupLat_w:65
+[03/29/2017 14:39:05]     accoreconsole.exe Information: 0 : param to change: SupLat_h:20
+[03/29/2017 14:39:05]     accoreconsole.exe Information: 0 : param to change: SupMed_w:4
+[03/29/2017 14:39:05]     accoreconsole.exe Information: 0 : param to change: InfLatRoundingWidth:12
+[03/29/2017 14:39:05]     accoreconsole.exe Information: 0 : param to change: InfLat_h:21
+[03/29/2017 14:39:05]     accoreconsole.exe Information: 0 : param to change: InfMed_h:17
+[03/29/2017 14:39:05]     accoreconsole.exe Information: 0 : param to change: SupLatRoundingWidth:12
+[03/29/2017 14:39:06]     accoreconsole.exe Information: 0 : param to change: InfMedRoundingWidth:12
+[03/29/2017 14:39:06]     accoreconsole.exe Information: 0 : param to change: PupilDistance:62
+[03/29/2017 14:39:37]     accoreconsole.exe Information: 0 : doc updated.
+[03/29/2017 14:39:37]     accoreconsole.exe Information: 0 : writing file: Z:\Aces\Jobs\408dbcaea0de4b1098d2ae89c7511cd3\Output.stl
+[03/29/2017 14:39:37]     accoreconsole.exe Information: 0 : STL translator is available
+[03/29/2017 14:39:37]     accoreconsole.exe Information: 0 : Setting STL translator options
+[03/29/2017 14:39:37]     accoreconsole.exe Information: 0 : Setting other STL translator things
+[03/29/2017 14:39:37]     accoreconsole.exe Information: 0 : Generating STL output
+[03/29/2017 14:39:39]     accoreconsole.exe Information: 0 : STL output complete
+[03/29/2017 14:39:39]     accoreconsole.exe Information: 0 : output saved
+[03/29/2017 14:39:39] End AutoCAD Core Console output
+[03/29/2017 14:39:39] End script phase.
+[03/29/2017 14:39:39] Start upload phase.
+[03/29/2017 14:39:39] Uploading Z:\Aces\Jobs\408dbcaea0de4b1098d2ae89c7511cd3\Output.stl to https://inventorio-prod.s3-us-west-2.amazonaws.com/aces-workitem-outputs/408dbcaea0de4b1098d2ae89c7511cd3/Output.stl?AWSAccessKeyId=ASIAJ245YTSYNWIJPCVA&Expires=1490801979&x-amz-security-token=FQoDYXdzEEcaDIidDh1y81EbG%2B7hiiK3A7rjBJiqWNVxw1k3YYag0lFgcSA97ty9TMaaVoWzFzvNLT9gQ9iEkTp%2FiY2XngHs8JNxHSQNiZMRFBx7Fl07ggmKzbfnZsqkJibftij%2BZBhxxIRl9aN2vgDsLQRQOB5b%2FZgLtEQ2UNzcv%2BPtAT06P%2BC4jaiNa2K4XyPOmxmuyzE1QJFUEvde8IOIpBtb5rW77S1BEVzd4ozOq13POi4eC87BWcfAAW1SqgjGC5%2FPcQbmIyanJqasXdGyjm4C%2F%2B7sgAZLmndVYq8azygxFNMgSziCXn0XJp9Ewvz7YABNipabMES6NpPuLflJyCCFKfih5CqknW0GgsgF6hIQSRfmvkCQgVp%2FYlgCA8au7t5lP83Xh0tDANDZePmPTDNDlyZJpH3p2mCUQQjQPqo7vD0MkqZOhUNBEDfTec%2B05k%2BTLKOUBuXOkGGz2QGjF7bzDTdGSCVNLbrQLvOZvcuenzxTgLd2i%2BM0PGnYzea23ry26vCeHJ8ZCij%2BcKpJAM5itTiEV2sUVq0w5Fked9gEageOX%2BKaMm%2Fs%2BxLNxvOAREASR1%2BZ5lmM3kxN1a0S2DSNnw87LHKJFzUyNDMolfjuxgU%3D&Signature=U9BRQ3L73JCSyC7%2B%2BKb98jks1sw%3D.
+[03/29/2017 14:39:39] End upload phase.
+[03/29/2017 14:39:39] Job finished with result Succeeded

@@ -1,52 +1,17 @@
-[02/08/2017 20:41:11] Starting work item 6d53822f1aae4b29a07590a82a0923b6
-[02/08/2017 20:41:11] Start download phase.
-[02/08/2017 20:41:12] Start preparing AppPackage samplePlugin.
-[02/08/2017 20:41:12] Reuse previously downloaded app from local cache.
-[02/08/2017 20:41:12] Done preparing AppPackage samplePlugin.
-[02/08/2017 20:41:12] Start downloading file https://s3-us-west-2.amazonaws.com/inventor-io-samples/Box.ipt.
-[02/08/2017 20:41:12] End downloading file https://s3-us-west-2.amazonaws.com/inventor-io-samples/Box.ipt. 84480 bytes have been written to C:\Aces\Jobs\6d53822f1aae4b29a07590a82a0923b6\swing_c_washer.ipt.
-[02/08/2017 20:41:12] Embedded resource data:application/json,{"d1":"0.3 in", "d2":"0.5 in"} is saved as file: C:\Aces\Jobs\6d53822f1aae4b29a07590a82a0923b6\changeParameters.json.
-[02/08/2017 20:41:12] End download phase.
-[02/08/2017 20:41:12] Start preparing script and command line parameters.
-[02/08/2017 20:41:12] Folder "C:\Aces\Jobs\6d53822f1aae4b29a07590a82a0923b6\Output.stl" has been created.
-[02/08/2017 20:41:12] Start script content.
-[02/08/2017 20:41:12] 
-[02/08/2017 20:41:12] End script content.
-[02/08/2017 20:41:12] Command line: /i "C:\Aces\Jobs\6d53822f1aae4b29a07590a82a0923b6\swing_c_washer.ipt" changeParameters.json Output.stl /s "C:\Aces\Jobs\6d53822f1aae4b29a07590a82a0923b6\script.scr"
-[02/08/2017 20:41:12] End preparing script and command line parameters.
-[02/08/2017 20:41:12] Start script phase.
-[02/08/2017 20:41:12] ### Command line arguments:  /i "C:\Aces\Jobs\6d53822f1aae4b29a07590a82a0923b6\swing_c_washer.ipt" changeParameters.json Output.stl /s "C:\Aces\Jobs\6d53822f1aae4b29a07590a82a0923b6\script.scr" /al "C:\Aces\Applications\21.17\samplePlugin[9905bdf0-ff76-47cf-9e88-a193fff1b3b7].package".
-[02/08/2017 20:41:12] Start AutoCAD Core application output.
-[02/08/2017 20:41:12] accoreconsole.exe Information: 0 : Starting Inventor Server.
-[02/08/2017 20:41:12] accoreconsole.exe Information: 0 : Started Inventor Server 2017.1 (Build 211199000, 199)
-[02/08/2017 20:41:12] accoreconsole.exe Information: 0 : Loading plug-in: iLogic Plugin
-[02/08/2017 20:41:12]     accoreconsole.exe Information: 0 : Activating plug-in: iLogic Plugin
-[02/08/2017 20:41:12]     iLogic Plugin: initializing...
-[02/08/2017 20:41:12] accoreconsole.exe Information: 0 : Opening document: C:\Aces\Jobs\6d53822f1aae4b29a07590a82a0923b6\swing_c_washer.ipt
-[02/08/2017 20:41:12] accoreconsole.exe Information: 0 : Getting Inventor plug-in.
-[02/08/2017 20:41:12] accoreconsole.exe Information: 0 : Plug-in: sample plugin
-[02/08/2017 20:41:12]     accoreconsole.exe Information: 0 : Activating plug-in: sample plugin
-[02/08/2017 20:41:12]     accoreconsole.exe Information: 0 : : samplePlugin: initializing... 
-[02/08/2017 20:41:12]     accoreconsole.exe Information: 0 : Executing 'RunWithArguments' method on Automation object.
-[02/08/2017 20:41:12]     accoreconsole.exe Information: 0 : 2
-[02/08/2017 20:41:12]     accoreconsole.exe Information: 0 : RunWithArguments called with swing_c_washer and changeParameters.json and Output.stl
-[02/08/2017 20:41:12]     accoreconsole.exe Information: 0 : Modifying param _1
-[02/08/2017 20:41:12]     accoreconsole.exe Information: 0 : paramFile: changeParameters.json
-[02/08/2017 20:41:12]     accoreconsole.exe Information: 0 : changeParameters file: "{"d1":"0.3 in", "d2":"0.5 in"}"
-[02/08/2017 20:41:13]     accoreconsole.exe Information: 0 : param to change: d1:0.3 in
-[02/08/2017 20:41:13]     accoreconsole.exe Information: 0 : param to change: d2:0.5 in
-[02/08/2017 20:41:13]     accoreconsole.exe Information: 0 : doc updated.
-[02/08/2017 20:41:13]     accoreconsole.exe Information: 0 : writing file: C:\Aces\Jobs\6d53822f1aae4b29a07590a82a0923b6\Output.stl
-[02/08/2017 20:41:13]     accoreconsole.exe Information: 0 : STL translator is available
-[02/08/2017 20:41:13]     accoreconsole.exe Information: 0 : Setting STL translator options
-[02/08/2017 20:41:13]     accoreconsole.exe Information: 0 : Setting other STL translator things
-[02/08/2017 20:41:13]     accoreconsole.exe Information: 0 : Generating STL output
-[02/08/2017 20:41:13]     accoreconsole.exe Information: 0 : STL output complete
-[02/08/2017 20:41:13]     accoreconsole.exe Information: 0 : output saved
-[02/08/2017 20:41:13] End AutoCAD Core Console output
-[02/08/2017 20:41:13] End script phase.
-[02/08/2017 20:41:13] Start upload phase.
-[02/08/2017 20:41:13] Zipping directory C:\Aces\Jobs\6d53822f1aae4b29a07590a82a0923b6\Output.stl as C:\Aces\Jobs\6d53822f1aae4b29a07590a82a0923b6\Output.stl.zip.
-[02/08/2017 20:41:13] Uploading C:\Aces\Jobs\6d53822f1aae4b29a07590a82a0923b6\Output.stl.zip to https://inventorio-prod.s3-us-west-2.amazonaws.com/aces-workitem-outputs/6d53822f1aae4b29a07590a82a0923b6/Output.stl.zip?AWSAccessKeyId=ASIAII4BTCLDMZDPCODQ&Expires=1486590074&x-amz-security-token=FQoDYXdzEGYaDDh9kylV31Ndt6Q2kCK3AxBTNb9dUZB5UtjJ1%2FCb9nCi5kVPYa%2FJCezz4xDQ3xQFm5ffyWEaVggFvBmgeG6INlU7B3lpe7oGcpZMTrc%2FqDpOE1Jb05TNoslReOQ4Yn5OSc8I6tdNdCxazm2QvUS6BqcKJTU%2BjcELuKALPcZT2KU5G%2B5HGJRILkvraxS1%2FCCym2uGVwj0qaL9tADbCh9AbJPJohtT%2F5T4QtUehLGirQIYx29MEtJm7yuFbx7X7BzVonzlr3Xcna7dB7QKSo61qFa3it0RwK5pT4aABDqgjBiDwPC1t7%2BAfI2wW%2FsE68Hy6od64k3XozWdU9C6K3QjgUK46yQXlXFz5q4EtVWJ3%2BLypgxbEeKy5T1yPyPHMDcBmx6tZr9IXEaMwCxrlKqlRnb4JdgwGS7vE4lPpFTLaYH5Ok2SjQtDEFpKskdJgFQ5Uy619pc62M%2BUjv%2Beyzypeh7Mvc7hlmbE1%2F8fx5whC6Wjrm7RZ5vda7d24vP6YwsbHrfWGTzNIj%2BQR7at1sf5fR6w4sMFSnQQDjKgSbVaXaS0p2YNlcpygM%2FE7CDqVyX6L25coM9uMgMhFd6BnlJ170oI3Kvd2gMorvztxAU%3D&Signature=d79XDZBA9o5AQ2At%2Bj%2FDTf15UTA%3D.
-[02/08/2017 20:41:13] End upload phase.
-[02/08/2017 20:41:13] Job finished with result Succeeded
+[05/17/2017 18:40:52] Starting work item c133ee19326b476f8b63fe07a71c0300
+[05/17/2017 18:40:52] Start download phase.
+[05/17/2017 18:40:54] Start preparing AppPackage FF_AppPackage_1.
+[05/17/2017 18:40:54] Downloading bits to local cache.
+[05/17/2017 18:40:54] Error: Failed to prepare app package(s).
+[05/17/2017 18:40:54] Start downloading file https://static.factoryfour.com/pq/typeF_v12.ipt.
+[05/17/2017 18:40:57] End downloading file https://static.factoryfour.com/pq/typeF_v12.ipt. 3348992 bytes have been written to Z:\Aces\Jobs\c133ee19326b476f8b63fe07a71c0300\inputPart.ipt.
+[05/17/2017 18:40:57] Embedded resource data:application/json,{"SupLat_w":65,"SupLat_h":20,"SupMed_w":4,"InfLatRoundingWidth":12,"InfLat_h":21,"InfMed_h":17,"SupLatRoundingWidth":12,"InfMedRoundingWidth":12,"PupilDistance":62} is saved as file: Z:\Aces\Jobs\c133ee19326b476f8b63fe07a71c0300\changeParameters.json.
+[05/17/2017 18:40:57] End download phase.
+[05/17/2017 18:40:57] Start preparing script and command line parameters.
+[05/17/2017 18:40:57] Start script content.
+[05/17/2017 18:40:57] Changing parameters in file.
+[05/17/2017 18:40:57] End script content.
+[05/17/2017 18:40:57] Command line: /i "Z:\Aces\Jobs\c133ee19326b476f8b63fe07a71c0300\inputPart.ipt" changeParameters.json Output.stl /s "Z:\Aces\Jobs\c133ee19326b476f8b63fe07a71c0300\script.scr"
+[05/17/2017 18:40:57] End preparing script and command line parameters.
+[05/17/2017 18:40:57] Error: An unexpected error happened during phase Scripting of job.
+[05/17/2017 18:40:57] Job finished with result FailedEnvironmentSetup
